@@ -1,0 +1,19 @@
+<body>
+  <div class="container">
+    <h1>Weather Forecast</h1>
+    <div class="form-group">
+      <input [(ngModel)]="city" class="form-control" placeholder="Enter city">
+      <button (click)="getWeather()" class="btn btn-primary">Get Weather</button>
+    </div>
+    <div *ngIf="date">
+      <div class="weather-card">
+        <div class="city">{{ city }}</div>
+        <div class="date">{{ date }}</div>
+        <div class="weather-icon"><img src="http://openweathermap.org/img/w/{{ weatherIcon }}.png"></div>
+        <div class="temperature">{{ temperature }}°C</div>
+        <div class="description">{{ description }}</div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </div>
+    </div>
+  </div> 
+</body>
